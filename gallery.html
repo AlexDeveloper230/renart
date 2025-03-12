@@ -28,6 +28,121 @@
         border-radius: 10px; /* Optional: rounded corners */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: shadow */
       }
+      .gallery {
+        position: relative;
+        max-width: 500px;
+        text-align: center;
+      }
+      .main-image {
+        width: 100%; /* Adjust the percentage to control the size */
+        max-height: 500px; /* Set a smaller max-height */
+        object-fit: contain; /* Ensures the image fits within the container without cutting */
+        border-radius: 5px;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .arrow-btn.left {
+        left: 20px; /* Position left arrow on the left */
+      }
+
+      .arrow-btn.right {
+        right: 20px; /* Position right arrow on the right */
+      }
+
+      /* Close button */
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .gallery {
+        position: relative;
+        width: 100%; /* Default: full width */
+        max-width: 800px; /* Optional: max width for larger screens */
+        margin: 0 auto; /* Centers the gallery horizontally */
+        text-align: center;
+      }
+
+      /* Media Query for larger screens (PC) */
+      @media (min-width: 768px) {
+        .gallery {
+          width: 60%; /* On larger screens, take up 60% of the width */
+        }
+      }
+      @media (max-width: 768px) {
+        .gallery {
+          width: 80%; /* On larger screens, take up 60% of the width */
+        }
+      }
+      /* Arrow buttons styling */
+      .arrow-btn {
+        position: absolute;
+        top: 40%;
+        transform: translateY(0%);
+        font-size: 30px;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* semi-transparent dark background */
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 0;
+      }
+
+      /* Position the left arrow just outside the left edge */
+      .arrow-btn.left {
+        left: -40px; /* adjust this value to place the arrow as desired */
+      }
+
+      /* Position the right arrow just outside the right edge */
+      .arrow-btn.right {
+        right: -40px; /* adjust this value to place the arrow as desired */
+      }
+
+      /* Fullscreen styles */
+      .fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .fullscreen img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .arrow-btn {
+        height: auto;
+      }
     </style>
   </head>
   <style></style>
@@ -54,13 +169,31 @@
           <header>
             <h2>Galeria zdjęć</h2>
           </header>
+          <div class="gallery">
+            <button class="arrow-btn left" onclick="prevImage()">
+              &#10094;
+            </button>
+            <img
+              id="mainImage"
+              src="images/pic02.png"
+              alt="Gallery Image"
+              class="main-image"
+              onclick="openFullscreen()"
+            />
+            <button class="arrow-btn right" onclick="nextImage()">
+              &#10095;
+            </button>
+          </div>
 
-          <span class="image fit"
-            ><img src="images/chrzestex1.png" alt=""
-          /></span>
-          <span class="image fit"
-            ><img src="images/chrzestex2.png" alt=""
-          /></span>
+          <div
+            id="fullscreenContainer"
+            class="fullscreen"
+            style="display: none"
+            onclick="closeFullscreen()"
+          >
+            <button class="close">&times;</button>
+            <img id="fullscreenImage" src="" alt="Fullscreen Image" />
+          </div>
         </div>
       </div>
     </div>
@@ -132,6 +265,100 @@
     </section>
 
     <!-- Scripts -->
+    <script>
+      const images = [
+        "foto/1.jpeg",
+        "foto/2.jpeg",
+        "foto/3.jpeg",
+        "foto/4.jpeg",
+        "foto/5.jpeg",
+        "foto/6.jpeg",
+        "foto/7.jpeg",
+        "foto/8.jpeg",
+        "foto/9.jpeg",
+        "foto/10.jpeg",
+        "foto/11.jpeg",
+        "foto/12.jpeg",
+        "foto/13.jpeg",
+        "foto/14.jpeg",
+        "foto/15.jpeg",
+        "foto/16.jpeg",
+        "foto/17.jpeg",
+        "foto/18.jpeg",
+        "foto/19.jpeg",
+        "foto/20.jpeg",
+        "foto/21.jpeg",
+        "foto/22.jpeg",
+        "foto/23.jpeg",
+        "foto/24.jpeg",
+        "foto/25.jpeg",
+        "foto/26.jpeg",
+        "foto/27.jpeg",
+        "foto/28.jpeg",
+        "foto/29.jpeg",
+        "foto/30.jpeg",
+        "foto/31.jpeg",
+        "foto/32.jpeg",
+        "foto/33.jpeg",
+        "foto/34.jpeg",
+        "foto/35.jpeg",
+        "foto/36.jpeg",
+        "foto/37.jpeg",
+        "foto/38.jpeg",
+        "foto/39.jpeg",
+        "foto/40.jpeg",
+      ];
+      let currentIndex = 0;
+      const mainImage = document.getElementById("mainImage");
+
+      function updateImage() {
+        mainImage.style.opacity = "0";
+        setTimeout(() => {
+          mainImage.src = images[currentIndex];
+          mainImage.style.opacity = "1";
+        }, 200);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+      }
+
+      function openFullscreen() {
+        const fullscreenContainer = document.getElementById(
+          "fullscreenContainer"
+        );
+        const fullscreenImage = document.getElementById("fullscreenImage");
+        const navbar = document.getElementById("header"); // Select the navbar
+
+        // Hide the navbar
+        navbar.style.display = "none";
+
+        // Set the fullscreen image
+        fullscreenImage.src = images[currentIndex];
+
+        // Display the fullscreen container
+        fullscreenContainer.style.display = "flex";
+      }
+
+      function closeFullscreen() {
+        const fullscreenContainer = document.getElementById(
+          "fullscreenContainer"
+        );
+        const navbar = document.getElementById("header"); // Select the navbar
+
+        // Show the navbar again
+        navbar.style.display = "flex";
+
+        // Hide the fullscreen container
+        fullscreenContainer.style.display = "none";
+      }
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
