@@ -189,7 +189,7 @@
       });
   }
 })(jQuery);
-const copyBtnP = document.getElementById("copy-btn-phone");
+/*const copyBtnP = document.getElementById("copy-btn-phone");
 const copyBtnE = document.getElementById("copy-btn-email");
 const phone = "+48 123 456 789";
 const email = "kontakt@twoja-firma.pl";
@@ -211,4 +211,4 @@ copyBtnE.addEventListener("click", () => {
     document.getElementById("copy-btn-email").innerHTML =
       "Skopiuj email do schowka";
   }, 2000);
-});
+});*/

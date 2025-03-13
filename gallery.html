@@ -11,6 +11,12 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Lightbox2 CSS (Head Section) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+    />
+
     <style>
       /* Center the video */
       .video-container {
@@ -169,30 +175,127 @@
           <header>
             <h2>Galeria zdjęć</h2>
           </header>
-          <div class="gallery">
-            <button class="arrow-btn left" onclick="prevImage()">
-              &#10094;
-            </button>
-            <img
-              id="mainImage"
-              src="images/pic02.png"
-              alt="Gallery Image"
-              class="main-image"
-              onclick="openFullscreen()"
-            />
-            <button class="arrow-btn right" onclick="nextImage()">
-              &#10095;
-            </button>
-          </div>
-
-          <div
-            id="fullscreenContainer"
-            class="fullscreen"
-            style="display: none"
-            onclick="closeFullscreen()"
-          >
-            <button class="close">&times;</button>
-            <img id="fullscreenImage" src="" alt="Fullscreen Image" />
+          <div class="gallery" id="gallery">
+            <a href="foto/1.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/1.jpeg" alt="Image 1"
+            /></a>
+            <a href="foto/2.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/2.jpeg" alt="Image 2"
+            /></a>
+            <a href="foto/3.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/3.jpeg" alt="Image 3"
+            /></a>
+            <a href="foto/4.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/4.jpeg" alt="Image 4"
+            /></a>
+            <a href="foto/5.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/5.jpeg" alt="Image 5"
+            /></a>
+            <a href="foto/6.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/6.jpeg" alt="Image 6"
+            /></a>
+            <a href="foto/7.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/7.jpeg" alt="Image 7"
+            /></a>
+            <a href="foto/8.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/8.jpeg" alt="Image 8"
+            /></a>
+            <a href="foto/9.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/9.jpeg" alt="Image 9"
+            /></a>
+            <a href="foto/10.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/10.jpeg" alt="Image 10"
+            /></a>
+            <a href="foto/11.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/11.jpeg" alt="Image 11"
+            /></a>
+            <a href="foto/12.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/12.jpeg" alt="Image 12"
+            /></a>
+            <a href="foto/13.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/13.jpeg" alt="Image 13"
+            /></a>
+            <a href="foto/14.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/14.jpeg" alt="Image 14"
+            /></a>
+            <a href="foto/15.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/15.jpeg" alt="Image 15"
+            /></a>
+            <a href="foto/16.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/16.jpeg" alt="Image 16"
+            /></a>
+            <a href="foto/17.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/17.jpeg" alt="Image 17"
+            /></a>
+            <a href="foto/18.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/18.jpeg" alt="Image 18"
+            /></a>
+            <a href="foto/19.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/19.jpeg" alt="Image 19"
+            /></a>
+            <a href="foto/20.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/20.jpeg" alt="Image 20"
+            /></a>
+            <a href="foto/21.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/21.jpeg" alt="Image 21"
+            /></a>
+            <a href="foto/22.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/22.jpeg" alt="Image 22"
+            /></a>
+            <a href="foto/23.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/23.jpeg" alt="Image 23"
+            /></a>
+            <a href="foto/24.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/24.jpeg" alt="Image 24"
+            /></a>
+            <a href="foto/25.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/25.jpeg" alt="Image 25"
+            /></a>
+            <a href="foto/26.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/26.jpeg" alt="Image 26"
+            /></a>
+            <a href="foto/27.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/27.jpeg" alt="Image 27"
+            /></a>
+            <a href="foto/28.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/28.jpeg" alt="Image 28"
+            /></a>
+            <a href="foto/29.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/29.jpeg" alt="Image 29"
+            /></a>
+            <a href="foto/30.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/30.jpeg" alt="Image 30"
+            /></a>
+            <a href="foto/31.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/31.jpeg" alt="Image 31"
+            /></a>
+            <a href="foto/32.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/32.jpeg" alt="Image 32"
+            /></a>
+            <a href="foto/33.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/33.jpeg" alt="Image 33"
+            /></a>
+            <a href="foto/34.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/34.jpeg" alt="Image 34"
+            /></a>
+            <a href="foto/35.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/35.jpeg" alt="Image 35"
+            /></a>
+            <a href="foto/36.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/36.jpeg" alt="Image 36"
+            /></a>
+            <a href="foto/37.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/37.jpeg" alt="Image 37"
+            /></a>
+            <a href="foto/38.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/38.jpeg" alt="Image 38"
+            /></a>
+            <a href="foto/39.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/39.jpeg" alt="Image 39"
+            /></a>
+            <a href="foto/40.jpeg" data-lightbox="gallery" onclick="hideNav()"
+              ><img src="thumbnail/40.jpeg" alt="Image 40"
+            /></a>
           </div>
         </div>
       </div>
@@ -265,105 +368,40 @@
     </section>
 
     <!-- Scripts -->
-    <script>
-      const images = [
-        "foto/1.jpeg",
-        "foto/2.jpeg",
-        "foto/3.jpeg",
-        "foto/4.jpeg",
-        "foto/5.jpeg",
-        "foto/6.jpeg",
-        "foto/7.jpeg",
-        "foto/8.jpeg",
-        "foto/9.jpeg",
-        "foto/10.jpeg",
-        "foto/11.jpeg",
-        "foto/12.jpeg",
-        "foto/13.jpeg",
-        "foto/14.jpeg",
-        "foto/15.jpeg",
-        "foto/16.jpeg",
-        "foto/17.jpeg",
-        "foto/18.jpeg",
-        "foto/19.jpeg",
-        "foto/20.jpeg",
-        "foto/21.jpeg",
-        "foto/22.jpeg",
-        "foto/23.jpeg",
-        "foto/24.jpeg",
-        "foto/25.jpeg",
-        "foto/26.jpeg",
-        "foto/27.jpeg",
-        "foto/28.jpeg",
-        "foto/29.jpeg",
-        "foto/30.jpeg",
-        "foto/31.jpeg",
-        "foto/32.jpeg",
-        "foto/33.jpeg",
-        "foto/34.jpeg",
-        "foto/35.jpeg",
-        "foto/36.jpeg",
-        "foto/37.jpeg",
-        "foto/38.jpeg",
-        "foto/39.jpeg",
-        "foto/40.jpeg",
-      ];
-      let currentIndex = 0;
-      const mainImage = document.getElementById("mainImage");
 
-      function updateImage() {
-        mainImage.style.opacity = "0";
-        setTimeout(() => {
-          mainImage.src = images[currentIndex];
-          mainImage.style.opacity = "1";
-        }, 200);
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-      }
-
-      function openFullscreen() {
-        const fullscreenContainer = document.getElementById(
-          "fullscreenContainer"
-        );
-        const fullscreenImage = document.getElementById("fullscreenImage");
-        const navbar = document.getElementById("header"); // Select the navbar
-
-        // Hide the navbar
-        navbar.style.display = "none";
-
-        // Set the fullscreen image
-        fullscreenImage.src = images[currentIndex];
-
-        // Display the fullscreen container
-        fullscreenContainer.style.display = "flex";
-      }
-
-      function closeFullscreen() {
-        const fullscreenContainer = document.getElementById(
-          "fullscreenContainer"
-        );
-        const navbar = document.getElementById("header"); // Select the navbar
-
-        // Show the navbar again
-        navbar.style.display = "flex";
-
-        // Hide the fullscreen container
-        fullscreenContainer.style.display = "none";
-      }
-    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Lightbox2 JS (Before Closing Body Tag) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+      // Function to hide the navbar
+
+      // Function to show the navbar
+      function showNav() {
+        document.getElementById("header").style.display = "block"; // Show the navbar
+      }
+
+      // Function that will be triggered when any image is clicked
+      function hideNav() {
+        // Hide the navbar
+        document.getElementById("header").style.display = "none"; // Hide the navbar
+
+        // Inject onclick function for the close button of the lightbox after 1 second
+        setTimeout(function () {
+          // Find the lightbox close button
+          let closeButton = document.querySelector(
+            ".lb-closeContainer .lb-close"
+          );
+
+          // Inject the onclick for showing the nav again
+
+          closeButton.setAttribute("onclick", "showNav()");
+        }, 1000); // Delay the injection of the onclick by 1 second
+      }
+    </script>
   </body>
 </html>
