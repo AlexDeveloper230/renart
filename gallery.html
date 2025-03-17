@@ -149,6 +149,54 @@
       .arrow-btn {
         height: auto;
       }
+
+      .gallery {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .gallery a {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .gallery img {
+        transition: transform 0.3s ease-in-out;
+        display: block;
+        width: 150px; /* Adjust thumbnail size */
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .gallery a::after {
+        content: "+";
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        background: rgba(0, 0, 0, 0.6);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .gallery a:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery a:hover::after {
+        opacity: 1;
+      }
     </style>
   </head>
   <style></style>
