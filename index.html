@@ -12,7 +12,11 @@
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
-  <style></style>
+  <style>
+    .widthfix {
+      width: 50% !important;
+    }
+  </style>
   <body class="is-preload">
     <!-- Header -->
     <header id="header" class="alt">
@@ -78,32 +82,45 @@
     <section id="one">
       <div class="wrapper">
         <div class="posts inner">
-          <div>
+          <div style="width: 50%">
             <article style="color: #ff0000; font-style: italic">
               <h2 style="color: #ff0000; font-style: italic">
                 Cześć, nazywam się Renata.
               </h2>
 
-              Od zawsze wierzę, że najpiękniejsze wspomnienia rodzą się przy
-              wspólnym stole. Sama uwielbiam celebrować chwile w gronie
-              najbliższych, dlatego organizacja przyjęć to dla mnie coś więcej
-              niż praca - to pasja, którą pragnę dzielić się z innymi. Wiem, jak
-              ważne jest, by każdy detal tworzył wyjątkowy nastrój, który na
-              długo pozostaje w sercu. <br />
-              <br />Właśnie dlatego stworzyłam Ren-Art Event - by pomagać
-              ludziom przeżywać wyjątkowe momenty bez stresu i gonitwy za
-              organizacją. Chcę, byś Ty i Twoi bliscy mogli skupić się na sobie,
-              a ja zaplanuję i przygotuję całą resztę. <br />
+              <p>
+                Od zawsze wierzę, że najpiękniejsze wspomnienia rodzą się przy
+                wspólnym stole. Sama uwielbiam celebrować chwile w gronie
+                najbliższych, dlatego organizacja przyjęć to dla mnie coś więcej
+                niż praca - to pasja, którą pragnę dzielić się z innymi. Wiem,
+                jak ważne jest, by każdy detal tworzył wyjątkowy nastrój, który
+                na długo pozostaje w sercu.
+              </p>
+
+              <p>
+                Właśnie dlatego stworzyłam Ren-Art Event - by pomagać ludziom
+                przeżywać wyjątkowe momenty bez stresu i gonitwy za organizacją.
+                Chcę, byś Ty i Twoi bliscy mogli skupić się na sobie, a ja
+                zaplanuję i przygotuję całą resztę.
+              </p>
               <br />Dlaczego warto mi zaufać? <br />
-              Bo wiem, jak ważne są chwile spędzone z bliskimi. Bo dbam o każdy
-              detal, tak jakbym przygotowywała przyjęcie dla własnej rodziny. Bo
-              chcę, abyś mógła po prostu cieszyć się tym dniem, bez stresu i
-              pośpiechu. Z radością pomogę Ci stworzyć magiczne przyjęcie, które
-              zostanie w sercach Twoich gości na długo. Z miłością do pięknych
-              chwil<br />
-              <span style="font-size: larger; font-weight: bold"
-                >Ren-Artka</span
-              >
+
+              <p>
+                Bo wiem, jak ważne są chwile spędzone z bliskimi. Bo dbam o
+                każdy detal, tak jakbym przygotowywała przyjęcie dla własnej
+                rodziny. Bo chcę, abyś mógła po prostu cieszyć się tym dniem,
+                bez stresu i pośpiechu. Z radością pomogę Ci stworzyć magiczne
+                przyjęcie, które zostanie w sercach Twoich gości na długo.
+              </p>
+
+              <p style="font-weight: bold">Z miłością do pięknych chwil</p>
+
+              <img
+                id="signature"
+                class="image fit"
+                src="images/renartka1.png"
+                alt="Ren-Artka"
+              />
               <ul class="actions">
                 <li>
                   <a href="about.html" class="button">Dowiedz się więcej</a>
@@ -310,5 +327,24 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      function updateImgClass() {
+        let images = document.querySelectorAll("img[id]"); // Select only <img> tags with an ID
+
+        images.forEach((img) => {
+          if (window.innerWidth > 720) {
+            img.classList.add("widthfix"); // Add class for large screens
+          } else {
+            img.classList.remove("widthfix"); // Remove class for small screens
+          }
+        });
+      }
+
+      // Run on page load
+      document.addEventListener("DOMContentLoaded", updateImgClass);
+
+      // Run on window resize
+      window.addEventListener("resize", updateImgClass);
+    </script>
   </body>
 </html>
