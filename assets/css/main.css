@@ -5833,9 +5833,67 @@ html {
   color: white; /* Optional: To make text readable */
 }
 #header {
-  background: url("../../images/logo ren.png") no-repeat center center;
-  background-size: contain; /* or 'contain' depending on your preference */
-  height: 150px; /* Adjust height as needed */
-  background-position: center 66px; /* Adjust the percentage to move it down */
-  height: 333px;
+  /* Initial state for animation */
+  opacity: 0;
+  transform: scale(1.1); /* Start slightly zoomed-in */
+
+  /* Animation properties */
+  animation: fadeInZoom 1.5s ease-out forwards;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Ensure the header takes up the full viewport height */
+#header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fill the full height of the screen */
+  overflow: hidden;
+}
+/* Ensure the header takes up the full viewport height */
+#header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fill the full height of the screen */
+  overflow: hidden;
+}
+
+/* Ensure the header adjusts based on the video's aspect ratio */
+/* Ensure the header is positioned correctly */
+/* Set the header container */
+/* Set the header container */
+/* Set the header container */
+/* Default header styles */
+#header {
+  position: relative;
+  width: 100%;
+  height: auto; /* Set to auto to adjust based on content/video */
+  overflow: hidden;
+  background: url("images/header-fallback.jpg") no-repeat center center;
+  background-size: cover; /* Background image that covers the area */
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures video fits without being cut off */
+  z-index: -1; /* Keep video behind content */
+}
+
+/* When the video is not available, use the fallback background image */
+.video-background {
+  background: url("images/header-fallback.jpg") no-repeat center center;
+  background-size: cover;
+  display: block;
 }
