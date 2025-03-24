@@ -5880,20 +5880,3 @@ html {
   background: url("images/header-fallback.jpg") no-repeat center center;
   background-size: cover; /* Background image that covers the area */
 }
-
-#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensures video fits without being cut off */
-  z-index: -1; /* Keep video behind content */
-}
-
-/* When the video is not available, use the fallback background image */
-.video-background {
-  background: url("images/header-fallback.jpg") no-repeat center center;
-  background-size: cover;
-  display: block;
-}
