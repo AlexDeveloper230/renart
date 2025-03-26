@@ -4243,10 +4243,11 @@ table.alt tbody tr td {
 }
 
 #header > nav > ul > li > a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgb(255, 255, 255);
   overflow: hidden;
   position: relative;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #header > nav > ul > li > a:hover {
